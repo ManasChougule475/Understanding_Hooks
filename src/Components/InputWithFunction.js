@@ -1,12 +1,18 @@
 
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 export default function Input(){
 
     const [name,setName] = useState("Harry");
     const [lastName,setLastname] = useState("Potter");
 
-   
+    useEffect(()=>{
+        document.title = name+" "+lastName;
+    },[name,lastName]);  // performs the work of both componentDidMount & componentDidUpdate 
+    // useEffect is performed(i.e here title is updated) as soon as component is mounted 
+    // [name,lastName] i.e useEffect is performed whenever name OR lastName is changed after component is mounted
+
+
     return(
         <>
         <div className="section">
