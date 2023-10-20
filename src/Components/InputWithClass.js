@@ -20,6 +20,16 @@ export default class Input extends React.Component{
             lastName: e.target.value
         })
     }
+
+    // with below both methods title also gets updated dynamically  as user types name & lastName
+    componentDidMount(){
+        document.title = this.state.name+" "+this.state.lastName;        
+    }  // :- title chnages from React App to new value as soon as component is mounted
+
+    componentDidUpdate(){
+        document.title = this.state.name+" "+this.state.lastName; 
+    }  // :- title chnages from old value in mounting phase to new one  whenever user updates name & lastName
+
     render(){
         return(
             <>
@@ -30,16 +40,16 @@ export default class Input extends React.Component{
                             onChange={this.handleNameChange}
                      />
                 </Row >
-                {/* <Row label="Last Name">
+                <Row label="Last Name">
                      <input  className="input" 
                             value={this.state.lastName} 
                             onChange={this.handleLastnameChange}
                      />
-                </Row > */}
+                </Row >
                 
 
                 {/* <Row1 label="Last Name" handleLastnameChange={this.handleLastnameChange} lastName={this.state.lastName}></Row1> */}
-                <Row2 label="Last Name" handleLastnameChange={this.handleLastnameChange}>{this.state.lastName}</Row2>
+                {/* <Row2 label="Last Name" handleLastnameChange={this.handleLastnameChange}>{this.state.lastName}</Row2> */}
 
 
                 {/* <Row3 label="Last Name" >Ram<h6>sham</h6></Row3> */}
@@ -86,19 +96,19 @@ function Row(props){
 // }
 
 
-function Row2(props) {
-    const { label, handleLastnameChange, children } = props;
-    return (
-        <>
-            <label>{label}<br/></label>
-            <input className="input" 
-                value={children} 
-                onChange={handleLastnameChange}    
-            />
-            <hr />
-        </>
-    )
-}
+// function Row2(props) {
+//     const { label, handleLastnameChange, children } = props;
+//     return (
+//         <>
+//             <label>{label}<br/></label>
+//             <input className="input" 
+//                 value={children} 
+//                 onChange={handleLastnameChange}    
+//             />
+//             <hr />
+//         </>
+//     )
+// }
 
 
 // function Row3(props){

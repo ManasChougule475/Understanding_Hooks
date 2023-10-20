@@ -1,11 +1,11 @@
-import InputClass from "./Components/InputWithClass";
-import InputFunction from "./Components/InputWithClass";
+import InputWithClass from "./Components/InputWithClass";
+import InputWithFunction from "./Components/InputWithFunction";
 
 function App() {
   return (
     <>
-      <InputClass />
-      <InputFunction />
+      <InputWithClass />
+      {/* <InputWithFunction /> */}
     </>
   );
 }
