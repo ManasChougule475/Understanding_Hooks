@@ -39,7 +39,7 @@ export default class Input extends React.Component{
                 
 
                 {/* <Row1 label="Last Name" handleLastnameChange={this.handleLastnameChange} lastName={this.state.lastName}></Row1> */}
-                <Row2 label="Last Name" handleLastnameChange={this.handleLastnameChange}> {this.state.lastName} </Row2>
+                <Row2 label="Last Name" handleLastnameChange={this.handleLastnameChange}>{this.state.lastName}</Row2>
 
 
                 {/* <Row3 label="Last Name" >Ram<h6>sham</h6></Row3> */}
@@ -68,6 +68,9 @@ function Row(props){
 
 
 
+
+
+
 // function Row1(props){
 //     const{label,lastName,handleLastnameChange} = props;
 //     return(
@@ -82,6 +85,7 @@ function Row(props){
 //     )
 // }
 
+
 function Row2(props) {
     const { label, handleLastnameChange, children } = props;
     return (
@@ -95,7 +99,6 @@ function Row2(props) {
         </>
     )
 }
-
 
 
 // function Row3(props){
