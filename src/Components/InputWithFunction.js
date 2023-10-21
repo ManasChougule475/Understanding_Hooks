@@ -13,6 +13,15 @@ export default function Input(){
     // [name,lastName] i.e useEffect is performed whenever name OR lastName is changed after component is mounted
 
 
+    useEffect(()=> {
+        const timer = setInterval(() => {
+            console.log("Window-width: ",window.innerWidth);
+        }, 2000);
+
+        return(()=>{clearInterval(timer)})
+        }
+   );
+
     return(
         <>
         <div className="section">
