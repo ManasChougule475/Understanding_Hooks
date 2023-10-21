@@ -23,13 +23,28 @@ export default class Input extends React.Component{
 
     // with below both methods title also gets updated dynamically  as user types name & lastName
     componentDidMount(){
-        document.title = this.state.name+" "+this.state.lastName;        
-    }  // :- title chnages from React App to new value as soon as component is mounted
 
+        // :- title changes from React App to new value as soon as component is mounted
+        document.title = this.state.name+" "+this.state.lastName;  
+
+        //:- set the timer
+        this.timer = setInterval(() => {
+            console.log("Window-width: ",window.innerWidth);
+          }, 2000);
+  
+    }  
     componentDidUpdate(){
-        document.title = this.state.name+" "+this.state.lastName; 
-    }  // :- title chnages from old value in mounting phase to new one  whenever user updates name & lastName
 
+        // :- title changes from old value in mounting phase to new one  whenever user updates name & lastName
+        document.title = this.state.name+" "+this.state.lastName; 
+        
+    }  
+
+    componentWillUnmount(){
+        clearInterval(this.timer);
+    }
+
+    
     render(){
         return(
             <>
